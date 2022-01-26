@@ -50,7 +50,7 @@ class _LoginscreenState extends State<Loginscreen>
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => Registerscreen(),
             ));
       }
     } on FirebaseAuthException catch (e) {
@@ -236,7 +236,8 @@ class _LoginscreenState extends State<Loginscreen>
                               setState(() {
                                 showLoading = false;
                               });
-                              //signInWithPhoneAuthCredential(phoneAuthCredential);
+                              signInWithPhoneAuthCredential(
+                                  phoneAuthCredential);
                             },
                             verificationFailed: (verificationFailed) async {
                               setState(() {
